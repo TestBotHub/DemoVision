@@ -47,20 +47,12 @@ def main():
         else:
             cv2.imshow('image', frame)
             cv2.imshow('result', frame)
-        k = cv2.waitKey(10) & 0xFF
-        # cv2.waitKey(0)
+        k = cv2.waitKey(300) & 0xFF
+        # cv2.waitKey(5)
         if k == 27:
             break
         elif k == ord('s'):
-            frame_size = [area[1], area[1] + area[3], area[0], area[0] + area[2]]
-            with open('../config.json', 'r') as fp:
-                data = json.load(fp)
-            print(data)
-            if data == None:
-                data = {}
-            data['frame'] = frame_size
-            with open('../config.json', 'w') as fp:
-                json.dump(data, fp)
+            print(area)
             break
 
     cv2.destroyAllWindows()
