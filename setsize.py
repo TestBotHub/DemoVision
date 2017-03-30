@@ -47,7 +47,7 @@ def main():
         else:
             cv2.imshow('image', frame)
             cv2.imshow('result', frame)
-        k = cv2.waitKey(300) & 0xFF
+        k = cv2.waitKey(10) & 0xFF
         # cv2.waitKey(5)
         if k == 27:
             break
