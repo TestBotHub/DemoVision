@@ -29,7 +29,7 @@ def main():
     cv2.namedWindow('result')
     # Starting with 100's to prevent error while masking
 
-    cap = cv2.VideoCapture(params.cam_number)
+    cap = cv2.VideoCapture(0)
     while(cap.isOpened()):
     # frame = cv2.imread('images/'+ str(i) + '.png')
         ret, frame = cap.read()
@@ -47,7 +47,7 @@ def main():
         else:
             cv2.imshow('image', frame)
             cv2.imshow('result', frame)
-        k = cv2.waitKey(10) & 0xFF
+        k = cv2.waitKey(1000) & 0xFF
         # cv2.waitKey(5)
         if k == 27:
             break
